@@ -1,0 +1,48 @@
+import java.util.Scanner;
+class learn
+{
+    public static void main(String args[])
+    {   
+        int a,b,c,n;
+        System.out.println("Enter the value of a b and c:");
+        Scanner s=new Scanner(System.in);
+        a=s.nextInt();
+        b=s.nextInt();
+        c=s.nextInt();
+        System.out.println("1.For (a * b * c)");
+        System.out.println("2.For (a + b - c)");
+        System.out.println("3.For (a * b + c)");
+        System.out.println("4.To find greater one among them..");
+        n=s.nextInt();
+        switch(n)
+        {
+            case 1:
+                {
+                    System.out.println("(a * b * c)="+(a*b*c));
+                }break;
+            case 2:
+                {
+                    System.out.println("(a + b - c)="+(a+b-c));
+                }break;
+            case 3:
+                {
+                   System.out.println("(a * b + c)="+(a*b+c)); 
+                }break;
+            case 4:
+                {
+                    if(a>b && a>c)
+                    {
+                        System.out.println("A is greatest number:"+a);
+                    }
+                    else if(b>c && b>a)
+                    {
+                        System.out.println("B is greatest number:"+b);
+                    }
+                    else if(c>a && c>b)
+                    {
+                        System.out.println("C is greatest number:"+c);
+                    }
+                }break;
+        }
+    }
+}

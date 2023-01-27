@@ -1,0 +1,20 @@
+#include<stdio.h>
+void main()
+{
+    int a[10],n,sum,i,b[10],q,w,s;
+    printf("Enter no of terms:");
+    scanf("%d",&n);
+    for (i=0;i<n;i++)
+    {printf("Enter values:");
+    scanf("%d",&a[i]);
+    
+    }
+    for (i=0;i<n;i++){
+    b[s]=a[i];
+    }
+    printf("Original    copied");
+for (i=0;i<n;i++){
+
+printf("\n%d     %d",a[i],b[s]);
+}
+};

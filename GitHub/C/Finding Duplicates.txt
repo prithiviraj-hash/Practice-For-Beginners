@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+     int a[10],n,sum,i,b[10],q,count=0;
+    printf("Enter no of terms:");
+    scanf("%d",&n);
+    for (i=0;i<n;i++)
+    {printf("Enter values:");
+    scanf("%d",&a[i]);
+    }
+    for (i=0;i<n;i++){
+        for (q=i+1;q<n;q++)
+        {
+        if (a[i]==a[q])
+        count=count+1;
+	break;
+    }}
+    printf("%d",count);
+    return 0;
+}

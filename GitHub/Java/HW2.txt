@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class prithiviraj
+{
+    int num1,num2;
+    public static void main(String args[])
+    {   
+        int mul;
+        Scanner s=new Scanner(System.in);
+        prithiviraj vari=new prithiviraj();
+        System.out.println("Enter Two Numbers:");
+        vari.num1=s.nextInt();
+        vari.num2=s.nextInt();
+        mul=vari.num1*vari.num2;
+        int rem;
+        int sum=0;
+        System.out.println("Multiplication value="+mul);
+        while(mul!=0)
+        {
+            rem=mul%10;
+            sum=sum+rem;
+            mul=mul/10;
+        } 
+        System.out.println("Answer="+sum);
+    }
+}

@@ -1,0 +1,56 @@
+#include<stdio.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *temp,*head,*tail;
+int main()
+{   
+    int ch;
+    int ele;
+    head=NULL;
+    temp=NULL;
+    tail=NULL;
+    for(;;)
+    {
+    printf("\n1.Insert");
+    printf("\n2.Display");
+    printf("\nEnter your choice:");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:
+        if(head==NULL)
+        {
+        struct node *new=(struct node*)malloc(sizeof(struct node));
+        printf("\nEnter a element:");
+        scanf("%d",&ele);
+        new->data=ele;
+        new->next=NULL;
+        head=new;
+        tail=head;
+        }
+        else
+        {
+        struct node *new=(struct node*)malloc(sizeof(struct node));
+        printf("\nEnter a element:");
+        scanf("%d",&ele);
+        new->data=ele;
+        new->next=NULL;
+        tail->next=new;
+        tail=new;
+        }break;
+        case 2:
+        {
+            temp=head;
+            while(temp!=NULL)
+            {
+                printf("\nThe values are:%d",temp->data);
+                temp=temp->next;
+            }
+        }break;
+    }
+    }
+    return 0;
+}

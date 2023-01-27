@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class ex1
+{   
+    double velocity;
+    double acceleration;
+    int time;
+    double distance;
+    public static void main(String args[])
+    {   
+        Scanner s=new Scanner(System.in);
+        ex1 c=new ex1();
+        System.out.println("Enter Velocity:");
+        c.velocity=s.nextFloat();
+        System.out.println("Enter Acceleration:");
+        c.acceleration=s.nextFloat();
+        System.out.println("Enter Time:");
+        c.time=s.nextInt();
+        c.distance=c.velocity*c.time+c.acceleration*(c.time*c.time)/2;
+        System.out.println("Distance="+c.distance);
+    }
+}

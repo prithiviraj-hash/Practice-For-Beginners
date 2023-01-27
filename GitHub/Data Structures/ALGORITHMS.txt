@@ -1,0 +1,13 @@
+Divide and conquer
+dynamic programming
+asymtotic notations
+greedy method
+multithreaded algo
+linear prorammin
+amortized analysis
+probabilistic analysis
+randomised algo
+
+
+INTRO TO ALGORITHMS 3rd edition
+THOMAS H

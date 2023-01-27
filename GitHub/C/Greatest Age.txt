@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+void main ()
+{
+  int i, j, k, l, p;
+  printf ("Enter the Age of first person:");
+  scanf ("%d", &i);
+  printf ("Enter the Age of second person:");
+  scanf ("%d", &j);
+  printf ("Enter the Age of third person:");
+  scanf ("%d", &k);
+  printf ("Enter the Age of fourth person:");
+  scanf ("%d", &l);
+  if (i > j && i > k && i > l)
+  printf ("\nThe First person age %d is greater than every one...!", i);
+  if (j > i && j > k && j > l)
+  printf ("\nThe Second person age %d is greater than every one...!", j);
+  if (k > i && k > j && k > l)
+  printf ("\nThe Third person age %d is greater than every one...!", k);
+  if (l > i && l > j &&l > k)
+  printf ("\nThe last person age %d is greater than every one...!", l);
+ 
+
+}

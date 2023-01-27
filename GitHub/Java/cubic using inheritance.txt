@@ -1,0 +1,25 @@
+import java.util.Scanner;
+abstract class cubic
+{   
+    int st=1;
+    abstract void cube();
+}
+class cubefind extends cubic
+{       
+    Scanner s=new Scanner(System.in);
+    int num=s.nextInt();
+    void cube()
+    {       
+        for(int i=0;i<num;i++)
+        {
+            System.out.println("Cube value using inheritance:"+(st*st*st));
+            st++;
+        }
+    }
+    public static void main(String args[])
+    {
+        System.out.println("Enter a number to find its cube value:");
+        cubefind cu=new cubefind();
+        cu.cube();
+    }
+}

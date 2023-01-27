@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<conio.h>
+#define max 40
+
+int main()
+{
+    int stack[max];
+    int top=-1;
+    int a,b,c,ch,i;
+    for (;;)
+    {
+    printf("\n\n1.Add element");
+    //scanf("%d",&a);
+    printf("\n2.Display elements");
+    //scanf("%d",&b);
+    printf("\n3.Delete last element");
+    //scanf("%d",&c);
+    printf("\nEnter your choice:");
+    scanf("%d",&ch);
+    
+    
+    switch(ch)
+    {
+    case 1:{
+    if(top==max-1)
+    {
+        printf("\nThe Stack is full!!");
+    }
+    else
+       { printf("\nEnter element to add:");
+        scanf("%d",&a);
+        top++;
+        stack[top]=a;}
+    }break;
+    case 2:{
+    if(top==-1)
+    {
+        printf("\nNothing to show here...!");
+        
+    }
+    else
+    {
+        for(i=top;i>-1;i--)
+        printf("\nThe Elements:%d",stack[i]);
+    }}break;
+    case 3:{
+    if(top==-1)
+    {
+        printf("\nSorry we cannot delete an element in an empty stack..!");
+        
+    }
+    else
+    {
+        int ty=stack[top--];
+        printf("\nThe recently deleted element is:%d",ty);
+        //printf("After ")
+    }
+    }break;}
+    }
+    return 0;
+    
+}

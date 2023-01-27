@@ -1,0 +1,27 @@
+class center
+{
+    int a;
+    int b;
+    int c;
+    int res;
+    public center(int a,int b,int c)
+    {
+        this.a=a;
+        this.b=b;
+        this.c=c;
+        technical();
+    }
+    int technical()
+    {
+        res=a*b*c;
+        return res;
+    }
+    public static void main(String args[])
+    {
+        int a=4;
+        int b=5;
+        int c=7;
+        center deep=new center(a,b,c);
+        System.out.println("Result:"+deep.res);
+    }
+}

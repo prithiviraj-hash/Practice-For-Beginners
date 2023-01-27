@@ -1,0 +1,31 @@
+b tree types 
+1:full binary tree 
+2:complete binary tree
+3:perfect binary tree
+4:degenerate binary tree
+ 
+PROPERTIES
+NO OF LEAF NODES = NO OF INTERNAL NODES + 1
+ 
+FULL BINARY TREE:
+no child or two child
+
+COMPLETE BINARY TREE:
+levels are completely filled
+last level the node should be as left to right
+
+PERFECT BINARY TREE:
+all internal nodes have two children
+leaves are at same level
+
+DEGENERATE BINARY TREE:
+all the internals nodes have only one child
+
+BINARY TREE:
+all node sshould have atmost 2 nodes ie  012
+
+RULES:
+1:consider root node at index 0
+2:left child is placed at 2i+1
+3:right child is placed at 2i+2
+

@@ -1,0 +1,68 @@
+#include<stdio.h>
+int main()
+{       
+    int count=0;
+    int sudo[9][9]={1,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,1,3,4,5,6,7,8,9,1,2,4,5,6,7,8,9,1,2,3,5,6,7,8,9,1,2,3,4,6,7,8,9,1,2,3,4,5,7,8,9,1,2,3,4,5,6,8,9,1,2,3,4,5,6,7,9,1,2,3,4,5,6,7,8};
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+            printf("%d ",sudo[i][j]);
+            count++;
+        }
+        printf("\n");
+    }
+    printf("\nCount:%d",count);
+    printf("\n1.Count Row..");
+    printf("\n2.Count Column..");
+    printf("\n3.Count Cube..");
+    int ch;
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:
+        {
+        for(int i=0;i<9;i++)
+        {
+            int count=0;
+            for(int j=0;j<9;j++)
+            {
+                if(sudo[i][j]!=sudo[i][j+1])
+                {
+                   count++; 
+                }
+            }
+            if(count==9)
+            {
+              printf("\nThe Elements are different in %d Row",i+1);  
+            }
+            else
+            {
+                printf("\nThe Elements are repeated in %d Row",i+1);
+            }
+        }
+        }break;
+        case 2:
+        {
+        for(int i=0;i<9;i++)
+        {
+            int count=0;
+            for(int j=0;j<9;j++)
+           {
+              if(sudo[j][i]!=sudo[j+1][i])
+              {
+                  count++;
+              }
+           }
+              if(count==9)
+           {
+               printf("\nThe Elements are different in %d Column",i+1); 
+           }
+           else
+           {
+               printf("\nThe Elements are repeated in %d Column",i+1); 
+           }
+        }
+        }break;
+    }
+}

@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+void main ()
+{
+  int s1,s2,s3,s4,total,avg,find;
+  printf ("\nEnter the first value:");
+  scanf ("%d", &s1);
+  printf ("\nEnter the second value:");
+  scanf ("%d", &s2);
+  printf ("\nEnter the third value:");
+  scanf ("%d", &s3);
+  printf ("\nEnter the fourth value:");
+  scanf ("%d", &s4);
+  total=(s1+s2+s3+s4);
+  avg=total/4;
+  if (avg<=100 && avg>=95)
+    printf ("\nGold medalist...!");
+        else if (avg>=90 && avg<95)
+            printf ("\nSilver medalist...!"); 
+            else if (avg>=85 && avg<90)
+                   printf ("\nBronze medalist...!"); 
+                        else if(total<84)
+                            printf("\nAvg:%d",avg);
+    else
+    printf("Range out of bound..!");
+  
+}

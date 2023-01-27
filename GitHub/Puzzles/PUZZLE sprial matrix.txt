@@ -1,0 +1,55 @@
+ #include<stdio.h>
+int main()
+{   
+    int mat[3][3]={1,2,3,4,5,6,7,8,9};
+    int size=3;
+    printf("The MATRIX:\n");
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            printf(" %d",mat[i][j]);
+        }
+        printf("\n");
+    }
+    printf("SPIRAL MATRIX:\n");
+    int rowst=0,rowend=3,colst=0,colend=3;
+    int loop=0;
+    while(loop<2)
+    {   
+        if(rowst!=2)
+        {
+        for(int i=rowst;i<rowend;i++)
+        {
+            printf("%d ",mat[colst][i]);
+        }
+        rowst++;
+        for(int j=colst;j<colend-1;j++)
+        {
+            printf("%d ",mat[j+1][colend-1]);
+        }
+        }
+        if(rowst+1==rowend)
+        {   
+            int ii=0;
+            rowst=rowst-1;
+            rowend=rowend-1;
+            for(int i=ii;i<rowend;i++)
+            {
+                printf("%d ",mat[rowst][i]);
+            }
+        }
+        else
+        {
+            rowst=2;
+            int u=colend;
+            for(int i=colend;i>colst+1;i--)
+            {   
+                u--;
+                printf("%d ",mat[colend-1][u-1]);
+            }
+        }
+        loop++;
+    }
+    return 0;
+}

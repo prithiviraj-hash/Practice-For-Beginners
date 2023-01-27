@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Box
+{	
+Scanner s=new Scanner(System.in);
+float width=s.nextFloat();
+float height=s.nextFloat();
+float depth=s.nextFloat();
+float resu=width*height*depth;
+	Box()
+{
+	System.out.println("Output:"+resu);
+}
+public void sum(float a,float b,float c)
+{
+    //float a=width;
+    //float b=height;
+    //float c=depth;
+    System.out.println("Sum="+(a+b+c));
+}
+public static void main(String args[])
+{
+	System.out.println("Enter width:");
+	System.out.println("Enter height:");
+	System.out.println("Enter depth:");
+Box b=new Box();
+b.sum(b.width,b.height,b.depth);
+}	
+}

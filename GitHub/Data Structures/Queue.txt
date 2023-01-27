@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 5
+    int a,b,c,d,queue[max],ch,front=-1,ele,rear=-1,i;
+ void enqueue()
+    {   //int ;    
+        if(front=-1 || front!=max)
+        {
+            front=0;
+            rear++;
+            printf("\nEnter value to add:");
+            scanf("%d",&ele);
+            queue[rear]=ele;
+        }
+        else if(rear==max)
+        {
+            printf("\nSry Queue is full");
+        }
+        }
+         void dequeue()
+    {   //int front;
+        if(front!=-1)
+        {
+        printf("\nThe recently deleted value:%d",queue[front]);
+        front++;
+        }
+    
+    else if(front=-1)
+    {
+        printf("\nThe Queue is empty");
+    }
+    }
+     void disp()
+    {   //int front,rear,i;
+        if(front!=-1)
+        for(i=front;i<rear;i++)
+        {
+        printf("\n%d",queue[i]);
+    }
+    }
+
+int main()
+{   for(;;)
+    //int a,b,c,d,queue[max],ch;
+    {
+    printf("\n1.Add element");
+    printf("\n2.Delete element");
+    printf("\n3.Display Queue::");
+    scanf("\n%d",&ch);
+    
+    switch(ch)
+    {
+        case 1:
+        { enqueue();
+        break;}
+        case 2:
+        { dequeue();
+        break;}
+        case 3:
+        { disp();
+        break;}
+    }
+    }
+    return 0;
+}
