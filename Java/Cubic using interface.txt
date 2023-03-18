@@ -1,0 +1,25 @@
+import java.util.Scanner;
+interface cubic
+{   
+    public abstract void cube();
+}
+class cubefind implements cubic
+{       
+    Scanner s=new Scanner(System.in);
+    int num=s.nextInt();
+    int st=1;
+    public void cube()
+    {       
+        for(int i=0;i<num;i++)
+        {
+            System.out.println("Cube value using inheritance:"+(st*st*st));
+            st++;
+        }
+    }
+    public static void main(String args[])
+    {
+        System.out.println("Enter a number to find its cube value:");
+        cubefind cu=new cubefind();
+        cu.cube();
+    }
+}

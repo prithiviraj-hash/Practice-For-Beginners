@@ -1,0 +1,112 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node *left,*right;
+}*root=NULL;
+void inorder(struct node *root)
+    {
+        if(root==NULL)
+        {
+            return;
+        }
+        inorder(root->left);
+        printf(" %d",root->data);
+        inorder(root->right);
+    }
+int main()
+{   
+    int ele;
+    int ch;
+    int flag=0;
+    for(;;)
+    {
+        printf("\n1.Insert");
+        printf("\n2.Display");
+        printf("\nEnter Your Choice:");
+        //flag=0;
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+            struct node *ne=(struct node*)malloc(sizeof(struct node));
+            printf("\nEnter Your data:");
+            scanf("%d",&ele);
+            ne->data=ele;
+            ne->left=NULL;
+            ne->right=NULL;
+            struct node *temp=NULL;
+            struct node *temps=NULL;
+            if(root==NULL)
+            {
+                printf("\nRoot");
+                root=ne;
+            }
+            else if(root->left==NULL)
+            {
+                printf("\nRootleft");
+                root->left=ne;
+            }
+            else if(root->right==NULL)
+            {
+                printf("\nRootRight");
+                root->right=ne;
+            }
+            else
+            {
+                if(root->left!=NULL)
+                {
+                    temp=root->left;
+                    if(root->right!=NULL)
+                    {
+                    temps=root->right;
+                    }
+                    while(temp->left!=NULL && temps->left!=NULL)
+                    {
+                        temp=temp->left;
+                        temps=temps->left;
+                    }
+                    if(temp->left==NULL && flag==0)
+                    {
+                        printf("\nLeftSideleft");
+                        temp->left=ne;
+                        //flag=1;
+                    }
+                    else if(temp->right==NULL && flag==0)
+                    {
+                        printf("\nLeftsideRight");
+                        temp->right=ne;
+                        flag=1;
+                    }
+                    if(temps->left==NULL && flag==1)
+                    {
+                        printf("\nRightsideLeft");
+                        temps->left=ne;
+                        //flag=0;
+                    }
+                    else if(temps->right==NULL && flag==1)
+                    {
+                        printf("\nRightsideRight");
+                        temps->right=ne;
+                        flag=0;
+                    }
+                }
+                /*if(root->right!=NULL)
+                {
+                    temp=root->right;
+                    while(temp->right!=NULL)
+                    {
+                        temp=temp->right;
+                    }
+                    temp->right=ne;
+                }*/
+            }
+            break;
+            case 2:
+            inorder(root);
+            break;
+        }
+    }
+    return 0;
+}

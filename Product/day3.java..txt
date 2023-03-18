@@ -1,0 +1,61 @@
+import java.util.*;
+class quadrilateral
+{
+    int len=7;
+    int x1=5;
+    int x2=6;
+    int y1=10;
+    int y2=9;
+}
+class trapezoid extends quadrilateral
+{
+    float area(int h)
+    {
+        return 1/2*x1+x2+y1+y2*h;
+    }
+}
+class rectangle extends quadrilateral
+{
+    float area(int b)
+    {
+        return len*b;
+    }
+}
+class square extends quadrilateral
+{
+    float area()
+    {
+        return len*len;
+    }
+}
+class main
+{
+    public static void main(String[] args)
+    {   
+        Scanner s=new Scanner(System.in);
+        trapezoid tra=new trapezoid();
+        rectangle rec=new rectangle();
+        square squ=new square();
+        int r;
+        System.out.println("1.Area of Trapezoid");
+        System.out.println("1.Area of Rectangle");
+        System.out.println("1.Area of Square");
+        int n=s.nextInt();
+        switch(n)
+        {
+            case 1:
+            System.out.println("Enter Height:");
+            r=s.nextInt();
+            System.out.println(tra.area(r));
+            break;
+            case 2:
+            System.out.println("Enter Breath:"); 
+            r=s.nextInt();
+            System.out.println(rec.area(r));
+            break;
+            case 3:
+            System.out.println(squ.area());
+            break;
+        }
+    }
+}

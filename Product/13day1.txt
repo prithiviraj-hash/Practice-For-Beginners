@@ -1,0 +1,99 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    char data;
+    struct node *next;
+};
+struct node *temp,*head,*tail;
+int main()
+{   
+    int ch;
+    char ele;
+    int count=0;
+    int counta=0;
+    int countb=0;
+    head=NULL;
+    temp=NULL;
+    tail=NULL;
+    for(;;)
+    {
+    printf("\n1.Insert");
+    printf("\n2.Display");
+    printf("\n3.Result");
+    printf("\nEnter your choice:");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:
+        if(head==NULL)
+        {
+        struct node *new=(struct node*)malloc(sizeof(struct node));
+        printf("\nEnter a element:");
+        scanf(" %c",&ele);
+        //ele=getchar();
+        new->data=ele;
+        new->next=NULL;
+        head=new;
+        tail=head;
+        count++;
+        }
+        else
+        {
+        struct node *new=(struct node*)malloc(sizeof(struct node));
+        printf("\nEnter a element:");
+        scanf(" %c",&ele);
+        new->data=ele;
+        new->next=NULL;
+        tail->next=new;
+        tail=new;
+        count++;
+        }break;
+        case 2:
+        {
+            temp=head;
+            while(temp!=NULL)
+            {
+                printf("\nThe values are:%c",temp->data);
+                if(temp->data=='a')
+                {
+                    counta++;
+                }
+                else if(temp->data=='b')
+                {
+                    countb++;
+                }
+                temp=temp->next;
+            }
+        }break;
+        case 3:
+        {
+            if(counta>1 && countb==0 || counta==0 && countb>0)
+            {
+                printf("-1");
+            }
+            else
+            {
+                char arr1[counta];
+                char arr2[countb];
+                for(int i=0;i<counta;i++)
+                {
+                    arr1[i]='a';
+                }
+                for(int i=0;i<countb;i++)
+                {
+                    arr2[i]='b';
+                }
+                int len=counta+countb;
+                int h=0;
+                for(int i=0;i<len-1;i++)
+                {
+                    printf("%c ",arr1[i]);
+                    printf("%c ",arr2[i]);
+                }
+            }
+        }break;
+    }
+    }
+    return 0;
+}

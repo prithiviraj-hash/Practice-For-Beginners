@@ -1,0 +1,115 @@
+#include<stdio.h>
+//#include<conio.h>
+#define max 40
+
+int main()
+{
+    int stack[max];
+    int stack1[max];
+    int top1=-1;
+    int top=-1;
+    int min,min1;
+    int a,b,c,ch,i;
+    for (;;)
+    {
+    printf("\n\n1.Add element");
+    //scanf("%d",&a);
+    printf("\n2.Display elements");
+    //scanf("%d",&b);
+    printf("\n3.Pop");
+    //scanf("%d",&c);
+    printf("\n4.Print Auxiliary stack");
+    printf("\nEnter your choice:");
+    
+    scanf("%d",&ch);
+    
+    switch(ch)
+    {
+    case 1:{
+    if(top==max-1)
+    {
+        printf("\nThe Stack is full!!");
+    }
+    else
+       { printf("\nEnter element to add:");
+        scanf("%d",&a);
+        top++;
+           stack[top]=a;
+           min=stack[0];
+          // printf("\nThe stack element:%d",top);
+          // printf("\nMin:%d",min);
+           for(int i=0;i<=top;i++)
+           {
+               if(min>stack[i])
+               {
+                   min=stack[i];
+               }
+           }
+          // printf("\nMIN:%d",min);
+           if(top==0)
+           {
+               top1++;
+               stack1[top1]=min;
+           }
+           else if(top>0)
+           {
+               min1=stack1[0];
+               for(int i=0;i<top;i++)
+           {
+               if(min1<stack1[i])
+               {
+                   min1=stack1[i];
+               }
+           }
+           if(min<min1)
+           {
+               top1++;
+               stack1[top1]=min;
+           }
+           }
+       }
+    }break;
+    case 2:{
+    if(top==-1)
+    {
+        printf("\nNothing to show here...!");
+        
+    }
+    else
+    {
+        for(i=top;i>-1;i--)
+        printf("\nThe Elements:%d",stack[i]);
+    }}break;
+    case 3:{
+    if(top==-1)
+    {
+        printf("\nSorry we cannot delete an element in an empty stack..!");
+        
+    }
+    else
+    {
+        int ty=stack[top--];
+        stack1[top1--];
+        printf("\nThe recently deleted element is:%d",ty);
+    }
+    }break;
+    case 4:
+    {
+        min1=stack1[0];
+        for(int i=0;i<=top1;i++)
+           {
+               if(min1>stack1[i])
+               {
+                   min1=stack1[i];
+               }
+           }printf("\nMinimum:%d",min1);
+        for(int i=top1;i>-1;i--)
+        {
+            printf("\nAuxilary Stack:%d",stack1[i]);
+        }
+    }
+    }
+    }
+    return 0;
+    
+}

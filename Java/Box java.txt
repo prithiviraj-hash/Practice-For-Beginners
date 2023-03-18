@@ -1,0 +1,23 @@
+import java.util.Scanner
+class Box
+{	
+float width;
+float height;
+float depth;
+width=s.nextFloat();
+height=s.nextFloat();
+depth=s.nextFloat();
+float resu=width*height*depth;
+	Box()
+{
+	System.out.println("Output:"+(b.resu);
+}
+public static void main(String args[])
+{
+	System.out.println("Enter width:");
+	System.out.println("Enter height:");
+	System.out.println("Enter depth:");
+Scanner s=new Scanner(System.in);
+Box b=new Box();
+}	
+}

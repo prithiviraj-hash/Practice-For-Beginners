@@ -1,0 +1,86 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+char *rem=NULL;
+char *split(char *word,char *c)
+{
+    char *i;
+    char *res;
+    char s[100]="";
+    int g=0;
+    if(word!=NULL)
+    {
+        //printf("word:");
+    for(i=word;*i!='\0';i++)
+    {
+        s[g]=*i;
+        g++;
+        if(*(i+1)==*c)
+        {
+            rem=i;
+            
+            break;
+        }
+    }
+    res=s;
+    }
+    else if(word==NULL)
+    {
+        //printf("rem:%c",*(rem+2));
+        //printf("HI");
+        int flag=0;
+        if(*i=='\0')
+        {
+            //printf("NULL");
+            //res=NULL;
+            flag=1;
+            //return res;
+        }
+        for(i=rem+2;*i!='\0';i++)
+    {
+        //printf("%c",*i);
+        s[g]=*i;
+        g++;
+        if(*(i+1)==*c)
+        {
+            rem=i;
+            break;
+        }
+    }
+    res=s;
+    //printf("I:%c",*c);
+    /*if(*i=='\0')
+        {
+            printf("NULL");
+            res=NULL;
+        }
+    }*/
+   // printf("%")
+   if(flag==1)
+   {
+       return NULL;
+   }
+   else
+   {
+    return res;
+   }
+}
+}
+void main()
+{
+    char *str="I love rathinam";
+    char *word;
+    word=split(str," ");
+    //printf("\n%s",word);
+    /*word=split(NULL," ");
+    printf("\n%s",word);*/
+    //printf("%s",word);
+    //printf("\nSPACE:%ch",word[1]);
+    //int i=0;
+    while(word!=NULL)// && i<3)
+    {
+        printf("\n%s",word);
+        word=split(NULL," ");
+        //i++;
+    }
+}

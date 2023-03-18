@@ -1,0 +1,96 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node *left,*right;
+}*root=NULL;
+void inorder(struct node *root)
+    {
+        if(root==NULL)
+        {
+            return;
+        }
+        inorder(root->left);
+        printf(" %d",root->data);
+        inorder(root->right);
+    }
+int main()
+{   
+    int ele;
+    int ch;
+    for(;;)
+    {
+        printf("\n1.Insert");
+        printf("\n2.Display");
+        printf("\nEnter Your Choice:");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+            struct node *ne=(struct node*)malloc(sizeof(struct node));
+            printf("\nEnter Your data:");
+            scanf("%d",&ele);
+            ne->data=ele;
+            ne->left=NULL;
+            ne->right=NULL;
+            struct node *temp=NULL;
+            struct node *temps=NULL;
+            if(root==NULL)
+            {
+                printf("\nRoot");
+                root=ne;
+            }
+            else if(root->left==NULL)
+            {
+                printf("\nRootleft");
+                root->left=ne;
+            }
+            else if(root->right==NULL)
+            {
+                printf("\nRootRight");
+                root->right=ne;
+            }
+            else
+            {
+                if(root->left!=NULL)
+                {
+                    temp=root->left;
+                    if(root->right!=NULL)
+                    {
+                    temps=root->right;
+                    }
+                    while(temp->left!=NULL && temps->right!=NULL)
+                    {
+                        temp=temp->left;
+                        temps=temps->right;
+                    }
+                    if(temp->left==NULL)
+                    {
+                        printf("\nleft");
+                        temp->left=ne;
+                    }
+                    else if(temps->right==NULL)
+                    {
+                        printf("\nRight");
+                        temps->right=ne;
+                    }
+                }
+                /*if(root->right!=NULL)
+                {
+                    temp=root->right;
+                    while(temp->right!=NULL)
+                    {
+                        temp=temp->right;
+                    }
+                    temp->right=ne;
+                }*/
+            }
+            break;
+            case 2:
+            inorder(root);
+            break;
+        }
+    }
+    return 0;
+}

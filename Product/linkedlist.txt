@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *head,*temp,*tail=NULL;
+struct node *create()
+{
+    struct node *new=(struct node*)malloc(sizeof(struct node));
+    new->next=NULL;
+    return new;
+}
+void main()
+{
+    int ele;
+    int n;
+    for(;;)
+    {
+        printf("\n1.Insert");
+        printf("\n2.Display");
+        printf("\nEnter your choice:");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {   
+                struct node *cpy=create();
+                if(head==NULL)
+                {
+                printf("\nEnter element to add:");
+                scanf("%d",&ele);
+                cpy->data=ele;
+                //printf("%d",cpy->next);
+                head=cpy;
+                tail=head;
+                }
+                else
+                {
+                printf("\nEnter element to add:");
+                scanf("%d",&ele);
+                cpy->data=ele;
+                tail->next=cpy;
+                tail=cpy;
+                //printf("%s",tail->next);
+                }
+            }break;
+            case 2:
+            {
+                temp=head;
+                //temp->next=temp;
+                //printf("\nValues:%d",temp->data);
+                while(temp!=NULL)
+                {
+                    printf("\nValues:%d",temp->data);
+                    temp=temp->next;
+                }
+            }break;
+        }
+    }
+}
